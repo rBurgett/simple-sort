@@ -1,5 +1,5 @@
-import fs from 'fs';
-import path from 'path';
+// import fs from 'fs';
+// import path from 'path';
 import 'should';
 
 import Sorter from '../src/main.js';
