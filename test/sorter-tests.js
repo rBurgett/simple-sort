@@ -1,3 +1,5 @@
+import fs from 'fs';
+import path from 'path';
 import 'should';
 
 import Sorter from '../src/main.js';
@@ -6,6 +8,8 @@ const myStrArr = ['c', 'e', 'a', 'b', 'd', 'f'];
 const myNumArr = [1,5,9,4,3,7];
 const objNumArr = [{num:1},{num:5},{num:9},{num:4},{num:3},{num:7}];
 const objStrArr = [{str:'c'},{str:'e'},{str:'a'},{str:'b'},{str:'d'},{str:'f'}];
+
+const bigWordArray = JSON.parse(fs.readFileSync(path.join('test', 'words.json'), 'utf8'));
 
 describe('Sorter', () => {
 
@@ -118,5 +122,31 @@ describe('Sorter', () => {
             });
         });
     });
+
+    // describe('speed comparison with localeCompare()', function() {
+    //
+    //     this.timeout(30000);
+    //
+    //     console.log(bigWordArray.length);
+    //
+    //     describe('localeCompare()', () => {
+    //         it('should take a long time', () => {
+    //             const sortedWordArray = bigWordArray
+    //                 .concat()
+    //                 .sort((a, b) => a.localeCompare(b, 'en'));
+    //             sortedWordArray.should.be.an.Array();
+    //         });
+    //     });
+    //
+    //     describe('localeSortAscFunc', () => {
+    //         it('should take a much shorter time', () => {
+    //             const sortedWordArray = bigWordArray
+    //                 .concat()
+    //                 .sort(sorter.localeSortAscFunc());
+    //             sortedWordArray.should.be.an.Array();
+    //         });
+    //     });
+    //
+    // });
 
 });
