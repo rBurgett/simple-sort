@@ -15,5 +15,8 @@
         "node": true,
         "es6": true
     },
-    "globals": {}
+    "globals": {
+        "describe": false,
+        "it": false
+    }
 }

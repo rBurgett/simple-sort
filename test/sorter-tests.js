@@ -1,8 +1,6 @@
-/* global describe, it */
-
 import 'should';
 
-import Sorter from '../app-client/js/util/sorter.js';
+import Sorter from '../src/main.js';
 
 const myStrArr = ['c', 'e', 'a', 'b', 'd', 'f'];
 const myNumArr = [1,5,9,4,3,7];
