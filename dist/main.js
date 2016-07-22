@@ -3,8 +3,15 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+var CollatorPolyfill = function CollatorPolyfill(locale) {
+    this._locale = locale;
+};
+CollatorPolyfill.prototype.compare = function (a, b) {
+    return a.localeCompare(b, this._locale);
+};
+
 var Sorter = function Sorter(locale) {
-    this.intCol = new Intl.Collator(locale);
+    this.intCol = Intl && Intl.Collator ? new Intl.Collator(locale) : new CollatorPolyfill(locale);
 };
 
 Sorter.prototype._sort = function (arr, d) {
