@@ -1,11 +1,9 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var Sorter = function Sorter() {
-    var locale = arguments.length <= 0 || arguments[0] === undefined ? 'en' : arguments[0];
-
+var Sorter = function Sorter(locale) {
     this.intCol = new Intl.Collator(locale);
 };
 
@@ -71,7 +69,7 @@ Sorter.prototype.localeSortDes = function (arr) {
     return this._localeSort(arr, -1);
 };
 
-Sorter.prototype._localeSortFunc = function (arr, d) {
+Sorter.prototype._localeSortFunc = function (d) {
     var _this2 = this;
 
     return function (a, b) {

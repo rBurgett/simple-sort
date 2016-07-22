@@ -9,8 +9,6 @@ const myNumArr = [1,5,9,4,3,7];
 const objNumArr = [{num:1},{num:5},{num:9},{num:4},{num:3},{num:7}];
 const objStrArr = [{str:'c'},{str:'e'},{str:'a'},{str:'b'},{str:'d'},{str:'f'}];
 
-const bigWordArray = JSON.parse(fs.readFileSync(path.join('test', 'words.json'), 'utf8'));
-
 describe('Sorter', () => {
 
     const sorter = new Sorter('en');
@@ -121,13 +119,66 @@ describe('Sorter', () => {
                 });
             });
         });
+
+        describe('localeSortAscFunc method', () => {
+            it('should return a function', () => {
+                sorter.localeSortAscFunc().should.be.a.Function();
+            });
+            describe('the returned function', () => {
+                it('should be able to sort an array of values into ascending order', () => {
+                    myStrArr
+                        .concat()
+                        .sort(sorter.localeSortAscFunc()).should.eql(['a','b','c','d','e','f']);
+                });
+            });
+        });
+
+        describe('localeSortDesFunc method', () => {
+            it('should return a function', () => {
+                sorter.localeSortDesFunc().should.be.a.Function();
+            });
+            describe('the returned function', () => {
+                it('should be able to sort an array of values into descending order', () => {
+                    myStrArr
+                        .concat()
+                        .sort(sorter.localeSortDesFunc()).should.eql(['f','e','d','c','b','a']);
+                });
+            });
+        });
+
+        describe('localeSortByPropAscFunc method', () => {
+            it('should return a function', () => {
+                sorter.localeSortByPropAscFunc().should.be.a.Function();
+            });
+            describe('the returned function', () => {
+                it('should be able to sort an array of values into ascending order', () => {
+                    objStrArr
+                        .concat()
+                        .sort(sorter.localeSortByPropAscFunc('str')).should.eql([{str:'a'},{str:'b'},{str:'c'},{str:'d'},{str:'e'},{str:'f'}]);
+                });
+            });
+        });
+
+        describe('localeSortByPropDesFunc method', () => {
+            it('should return a function', () => {
+                sorter.localeSortByPropDesFunc().should.be.a.Function();
+            });
+            describe('the returned function', () => {
+                it('should be able to sort an array of values into descending order', () => {
+                    objStrArr
+                        .concat()
+                        .sort(sorter.localeSortByPropDesFunc('str')).should.eql([{str:'f'},{str:'e'},{str:'d'},{str:'c'},{str:'b'},{str:'a'}]);
+                });
+            });
+        });
+
     });
 
     // describe('speed comparison with localeCompare()', function() {
     //
     //     this.timeout(30000);
     //
-    //     console.log(bigWordArray.length);
+    //     const bigWordArray = JSON.parse(fs.readFileSync(path.join('test', 'words.json'), 'utf8'));
     //
     //     describe('localeCompare()', () => {
     //         it('should take a long time', () => {

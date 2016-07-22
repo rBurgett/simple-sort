@@ -1,4 +1,4 @@
-const Sorter = function(locale = 'en') {
+const Sorter = function(locale) {
     this.intCol = new Intl.Collator(locale);
 };
 
@@ -58,7 +58,7 @@ Sorter.prototype.localeSortDes = function(arr) {
     return this._localeSort(arr, -1);
 };
 
-Sorter.prototype._localeSortFunc = function(arr, d) {
+Sorter.prototype._localeSortFunc = function(d) {
     return (a, b) => d * this.intCol.compare(a, b);
 };
 Sorter.prototype.localeSortAscFunc = function() {
