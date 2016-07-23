@@ -4,10 +4,10 @@ import 'should';
 
 import Sorter from '../src/main.js';
 
-const myStrArr = ['c', 'e', 'a', 'b', 'd', 'f'];
-const myNumArr = [1,5,9,4,3,7];
-const objNumArr = [{num:1},{num:5},{num:9},{num:4},{num:3},{num:7}];
-const objStrArr = [{str:'c'},{str:'e'},{str:'a'},{str:'b'},{str:'d'},{str:'f'}];
+const myStrArr = ['c','e','a','b','d','e','f'];
+const myNumArr = [1,5,7,4,3,9,7];
+const objNumArr = [{num:1},{num:5},{num:7},{num:4},{num:3},{num:9},{num:7}];
+const objStrArr = [{str:'c'},{str:'e'},{str:'a'},{str:'b'},{str:'d'},{str:'e'},{str:'f'}];
 
 describe('Sorter', () => {
 
@@ -20,49 +20,49 @@ describe('Sorter', () => {
     describe('sorting methods', () => {
         describe('sortAsc method', () => {
             it('should sort an array of values into ascending order', () => {
-                sorter.sortAsc(myNumArr).should.eql([1,3,4,5,7,9]);
+                sorter.sortAsc(myNumArr).should.eql([1,3,4,5,7,7,9]);
             });
         });
 
         describe('sortDes method', () => {
             it('should sort an array of values into descending order', () => {
-                sorter.sortDes(myNumArr).should.eql([9,7,5,4,3,1]);
+                sorter.sortDes(myNumArr).should.eql([9,7,7,5,4,3,1]);
             });
         });
 
         describe('sortByPropAsc method', () => {
             it('should sort an array of object into ascending order by a certain property', () => {
-                sorter.sortByPropAsc(objNumArr, 'num').should.eql([{num:1},{num:3},{num:4},{num:5},{num:7},{num:9}]);
+                sorter.sortByPropAsc(objNumArr, 'num').should.eql([{num:1},{num:3},{num:4},{num:5},{num:7},{num:7},{num:9}]);
             });
         });
 
         describe('sortDes method', () => {
             it('should sort an array of object into descending order by a certain property', () => {
-                sorter.sortByPropDes(objNumArr, 'num').should.eql([{num:9},{num:7},{num:5},{num:4},{num:3},{num:1}]);
+                sorter.sortByPropDes(objNumArr, 'num').should.eql([{num:9},{num:7},{num:7},{num:5},{num:4},{num:3},{num:1}]);
             });
         });
 
         describe('localeSortAsc method', () => {
             it('should sort an array of values into ascending order', () => {
-                sorter.localeSortAsc(myStrArr).should.eql(['a','b','c','d','e','f']);
+                sorter.localeSortAsc(myStrArr).should.eql(['a','b','c','d','e','e','f']);
             });
         });
 
         describe('localeSortDes method', () => {
             it('should sort an array of values into descending order', () => {
-                sorter.localeSortDes(myStrArr).should.eql(['f','e','d','c','b','a']);
+                sorter.localeSortDes(myStrArr).should.eql(['f','e','e','d','c','b','a']);
             });
         });
 
         describe('localeSortByPropAsc method', () => {
             it('should sort an array of objects into ascending order by a certain property', () => {
-                sorter.localeSortByPropAsc(objStrArr, 'str').should.eql([{str:'a'},{str:'b'},{str:'c'},{str:'d'},{str:'e'},{str:'f'}]);
+                sorter.localeSortByPropAsc(objStrArr, 'str').should.eql([{str:'a'},{str:'b'},{str:'c'},{str:'d'},{str:'e'},{str:'e'},{str:'f'}]);
             });
         });
 
         describe('localeSortByPropDes method', () => {
             it('should sort an array of objects into descending order by a certain property', () => {
-                sorter.localeSortByPropDes(objStrArr, 'str').should.eql([{str:'f'},{str:'e'},{str:'d'},{str:'c'},{str:'b'},{str:'a'}]);
+                sorter.localeSortByPropDes(objStrArr, 'str').should.eql([{str:'f'},{str:'e'},{str:'e'},{str:'d'},{str:'c'},{str:'b'},{str:'a'}]);
             });
         });
     });
@@ -76,7 +76,7 @@ describe('Sorter', () => {
                 it('should be able to sort an array of values into ascending order', () => {
                     myNumArr
                         .concat()
-                        .sort(sorter.sortAscFunc()).should.eql([1,3,4,5,7,9]);
+                        .sort(sorter.sortAscFunc()).should.eql([1,3,4,5,7,7,9]);
                 });
             });
         });
@@ -89,7 +89,7 @@ describe('Sorter', () => {
                 it('should be able to sort an array of values into descending order', () => {
                     myNumArr
                         .concat()
-                        .sort(sorter.sortDesFunc()).should.eql([9,7,5,4,3,1]);
+                        .sort(sorter.sortDesFunc()).should.eql([9,7,7,5,4,3,1]);
                 });
             });
         });
@@ -102,7 +102,7 @@ describe('Sorter', () => {
                 it('should be able to sort an array of objects into ascending order by a certain property', () => {
                     objNumArr
                         .concat()
-                        .sort(sorter.sortByPropAscFunc('num')).should.eql([{num:1},{num:3},{num:4},{num:5},{num:7},{num:9}]);
+                        .sort(sorter.sortByPropAscFunc('num')).should.eql([{num:1},{num:3},{num:4},{num:5},{num:7},{num:7},{num:9}]);
                 });
             });
         });
@@ -115,7 +115,7 @@ describe('Sorter', () => {
                 it('should be able to sort an array of objects into descending order by a certain property', () => {
                     objNumArr
                         .concat()
-                        .sort(sorter.sortByPropDesFunc('num')).should.eql([{num:9},{num:7},{num:5},{num:4},{num:3},{num:1}]);
+                        .sort(sorter.sortByPropDesFunc('num')).should.eql([{num:9},{num:7},{num:7},{num:5},{num:4},{num:3},{num:1}]);
                 });
             });
         });
@@ -128,7 +128,7 @@ describe('Sorter', () => {
                 it('should be able to sort an array of values into ascending order', () => {
                     myStrArr
                         .concat()
-                        .sort(sorter.localeSortAscFunc()).should.eql(['a','b','c','d','e','f']);
+                        .sort(sorter.localeSortAscFunc()).should.eql(['a','b','c','d','e','e','f']);
                 });
             });
         });
@@ -141,7 +141,7 @@ describe('Sorter', () => {
                 it('should be able to sort an array of values into descending order', () => {
                     myStrArr
                         .concat()
-                        .sort(sorter.localeSortDesFunc()).should.eql(['f','e','d','c','b','a']);
+                        .sort(sorter.localeSortDesFunc()).should.eql(['f','e','e','d','c','b','a']);
                 });
             });
         });
@@ -154,7 +154,7 @@ describe('Sorter', () => {
                 it('should be able to sort an array of values into ascending order', () => {
                     objStrArr
                         .concat()
-                        .sort(sorter.localeSortByPropAscFunc('str')).should.eql([{str:'a'},{str:'b'},{str:'c'},{str:'d'},{str:'e'},{str:'f'}]);
+                        .sort(sorter.localeSortByPropAscFunc('str')).should.eql([{str:'a'},{str:'b'},{str:'c'},{str:'d'},{str:'e'},{str:'e'},{str:'f'}]);
                 });
             });
         });
@@ -167,7 +167,7 @@ describe('Sorter', () => {
                 it('should be able to sort an array of values into descending order', () => {
                     objStrArr
                         .concat()
-                        .sort(sorter.localeSortByPropDesFunc('str')).should.eql([{str:'f'},{str:'e'},{str:'d'},{str:'c'},{str:'b'},{str:'a'}]);
+                        .sort(sorter.localeSortByPropDesFunc('str')).should.eql([{str:'f'},{str:'e'},{str:'e'},{str:'d'},{str:'c'},{str:'b'},{str:'a'}]);
                 });
             });
         });
