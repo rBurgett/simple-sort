@@ -10,7 +10,8 @@
     "build": "babel src --out-dir dist",
     "watch": "babel src --watch --out-dir dist",
     "test": "mocha --compilers js:babel-register",
-    "generate-docs": "jsdoc src -r -d docs"
+    "generate-docs": "jsdoc src -r -d docs",
+    "generate-markdown-docs": "jsdoc2md ./src/main.js > ./docs/sorter.md"
   },
   "repository": {
     "type": "git",
