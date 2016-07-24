@@ -4,7 +4,7 @@
 
 ## Installation
 ```
-$ npm install json-next
+$ npm install simple-sort
 ```
 
 ## Usage
@@ -52,14 +52,14 @@ sorter.sortByPropDes(objArr, 'num');
 // -> [{num:3},{num:2},{num:1}]
 
 // sample array
-const objStrArr = [{name:'Janeway'},{num:'Picard'},{num:'Cisco'}]
+const objStrArr = [{name:'Janeway'},{num:'Picard'},{num:'Cisco'}];
 
 // locale sort array of objects by property in ascending order
-sorter.localeSortByPropAsc(objArr, 'name');
+sorter.localeSortByPropAsc(objStrArr, 'name');
 // -> [{name:'Cisco'},{num:'Janway'},{num:'Picard'}]
 
 // locale sort array of objects by property in descending order
-sorter.localSortByPropDes(objArr, 'name');
+sorter.localSortByPropDes(objStrArr, 'name');
 // -> [{name:'Picard'},{num:'Janway'},{num:'Cisco'}]
 
 ```
@@ -100,7 +100,7 @@ objArr.sort(sorter.sortByPropDesFunc('num'));
 // objArr -> [{num:3},{num:2},{num:1}]
 
 // sample array
-const objStrArr = [{name:'Janeway'},{num:'Picard'},{num:'Cisco'}]
+const objStrArr = [{name:'Janeway'},{num:'Picard'},{num:'Cisco'}];
 
 // locale sort array of objects by property in ascending order
 objStrArr.sort(sorter.localeSortByPropAscFunc('name'));
