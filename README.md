@@ -2,6 +2,13 @@
 
 `simple-sort` provides a straightforward collection of sorting methods and sort functions.
 
+## Why use `simple-sort`?
+* It provides both sorting methods and sort functions.
+* It makes sorting by locale simple (no separate API to remember).
+* It provides functionality via plain English method names rather than hard-to-remember parameters.
+* It provides you a consistent sorting API, so you don't have to individually write all sorting methods yourself.
+* It makes your code more readable and easily understandable, even by somebody unfamiliar with the `simple-sort` API.
+
 ## Installation
 ```
 $ npm install simple-sort
