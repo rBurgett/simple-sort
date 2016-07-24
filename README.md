@@ -21,7 +21,7 @@ const sorter = new Sorter('en');
 // sample data array
 const numArr = [2,3,1];
 
-// sort values in asending order
+// sort values in ascending order
 sorter.sortAsc(numArr);
 // -> [1,2,3]
 
