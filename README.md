@@ -59,15 +59,15 @@ sorter.sortByPropDes(objArr, 'num');
 // -> [{num:3},{num:2},{num:1}]
 
 // sample array
-const objStrArr = [{name:'Janeway'},{num:'Picard'},{num:'Cisco'}];
+const objStrArr = [{name:'Janeway'},{name:'Picard'},{name:'Cisco'}];
 
 // locale sort array of objects by property in ascending order
 sorter.localeSortByPropAsc(objStrArr, 'name');
-// -> [{name:'Cisco'},{num:'Janway'},{num:'Picard'}]
+// -> [{name:'Cisco'},{name:'Janway'},{name:'Picard'}]
 
 // locale sort array of objects by property in descending order
 sorter.localSortByPropDes(objStrArr, 'name');
-// -> [{name:'Picard'},{num:'Janway'},{num:'Cisco'}]
+// -> [{name:'Picard'},{name:'Janway'},{name:'Cisco'}]
 
 ```
 ####Function-returning methods:
@@ -107,15 +107,15 @@ objArr.sort(sorter.sortByPropDesFunc('num'));
 // objArr -> [{num:3},{num:2},{num:1}]
 
 // sample array
-const objStrArr = [{name:'Janeway'},{num:'Picard'},{num:'Cisco'}];
+const objStrArr = [{name:'Janeway'},{name:'Picard'},{name:'Cisco'}];
 
 // locale sort array of objects by property in ascending order
 objStrArr.sort(sorter.localeSortByPropAscFunc('name'));
-// objStrArr -> [{name:'Cisco'},{num:'Janway'},{num:'Picard'}]
+// objStrArr -> [{name:'Cisco'},{name:'Janway'},{name:'Picard'}]
 
 // locale sort array of objects by property in descending order
 objStrArr.sort(sorter.localSortByPropDesFunc('name'));
-// objStrArr -> [{name:'Picard'},{num:'Janway'},{num:'Cisco'}]
+// objStrArr -> [{name:'Picard'},{name:'Janway'},{name:'Cisco'}]
 ```
 
 ## Docs
