@@ -1,6 +1,6 @@
 {
   "name": "simple-sort",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Straightforward collection of sorting methods and sort functions.",
   "main": "./dist/main.js",
   "directories": {
